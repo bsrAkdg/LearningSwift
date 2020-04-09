@@ -46,3 +46,19 @@ var mySet1 : Set = [1, 2, 3]
 var mySet2 : Set = [3, 4, 5]
 var mySet3 = mySet1.union(mySet2)
 print(mySet3)
+
+// DICTIONARY
+// key-value pairing
+
+var myFavoriteDirectors = ["Pulp Fiction" : "Tarantino", "Lock, Stock" : "Guy Ritchie", "The Dark Knight" : "Christopher Nolan"]
+myFavoriteDirectors["Pulp Fiction"]
+print(myFavoriteDirectors)
+
+myFavoriteDirectors["Pulp Fiction"] = "Quentin Tarantino"
+print(myFavoriteDirectors)
+
+myFavoriteDirectors["Seven Samurai"] = "Akira Kurisowa"
+print(myFavoriteDirectors)
+
+var mySportCalori = ["Run" : 100, "Swim" : 200, "Basketball" : 300]
+mySportCalori["Run"]
