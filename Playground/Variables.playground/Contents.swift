@@ -1,6 +1,6 @@
 import UIKit
 
-// Variables & Consttants
+// PART ONE : Variables & Consttants
 // var : mutable
 // let : immutable
 
@@ -50,3 +50,21 @@ print(userCodeD/myNumberD) // result is Double
 // boolean
 var myBoolean = true
 myBoolean = false
+
+// PART TWO : Define variable types
+    
+var myString : String = "50"
+let myIntNumber : Int = 50
+let myDoubleNumber : Int = Int(30.0)
+
+// 1. define
+let myVariable : String // null
+// myVariable.uppercased() error, need initialization
+
+// 2. initialization
+myVariable = "Fatma"
+print(myVariable.uppercased())
+
+
+
+
