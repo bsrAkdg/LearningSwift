@@ -17,9 +17,33 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Lifecycle
+        print("viewDidLoad func called")
+        
+        // clear text, but
+        // when turn back viewDidLoad fun doesn't work,
+        // you should use viewWillAppear or viewWillAppear when each page create
+        // look at viewDidAppear()
+        // textFieldName.text = ""
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        print("viewWillAppear func called")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("viewDidAppear func called")
+        textFieldName.text = ""
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("viewDidDisappear func called")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("viewWillDisappear func called")
+    }
+    
     @IBAction func nextPage(_ sender: Any) {
         name = textFieldName.text!
         performSegue(withIdentifier: "nextPageSegue", sender: nil)
