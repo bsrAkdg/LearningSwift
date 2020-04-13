@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xcq-go-MTV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1CG-EV-Igi">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -95,93 +95,158 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPE-UR-xf7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPE-UR-xf7">
                                 <rect key="frame" x="84" y="106" width="246" height="20.333333333333329"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20.333333333333329" id="kFM-kH-6RG"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zs-ix-T9A">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zs-ix-T9A">
                                 <rect key="frame" x="84" y="153" width="246" height="20.333333333333343"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20.333333333333343" id="KMR-lu-Nig"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hamburger" translatesAutoresizingMaskIntoConstraints="NO" id="quf-kZ-LXf">
-                                <rect key="frame" x="20" y="222" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hamburger" translatesAutoresizingMaskIntoConstraints="NO" id="Kzk-Y1-bti">
-                                <rect key="frame" x="148" y="222" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hamburger" translatesAutoresizingMaskIntoConstraints="NO" id="fFc-PF-Cfa">
-                                <rect key="frame" x="276" y="222" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hamburger" translatesAutoresizingMaskIntoConstraints="NO" id="1Q4-sK-dkU">
-                                <rect key="frame" x="20" y="350" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hamburger" translatesAutoresizingMaskIntoConstraints="NO" id="DNM-AZ-QA7">
-                                <rect key="frame" x="148" y="350" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hamburger" translatesAutoresizingMaskIntoConstraints="NO" id="onP-dd-BCQ">
-                                <rect key="frame" x="276" y="350" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hamburger" translatesAutoresizingMaskIntoConstraints="NO" id="qvQ-xg-yBl">
-                                <rect key="frame" x="20" y="478" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hamburger" translatesAutoresizingMaskIntoConstraints="NO" id="kls-IV-44b">
-                                <rect key="frame" x="148" y="478" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hamburger" translatesAutoresizingMaskIntoConstraints="NO" id="VHM-dV-hPR">
-                                <rect key="frame" x="276" y="478" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hamburger" translatesAutoresizingMaskIntoConstraints="NO" id="Afb-jZ-57s">
-                                <rect key="frame" x="20" y="606" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hamburger" translatesAutoresizingMaskIntoConstraints="NO" id="yEQ-nm-qQv">
-                                <rect key="frame" x="148" y="606" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hamburger" translatesAutoresizingMaskIntoConstraints="NO" id="qVp-vx-dLz">
-                                <rect key="frame" x="276" y="606" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Highscore : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uio-cM-kaF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Highscore : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uio-cM-kaF">
                                 <rect key="frame" x="84" y="766" width="246" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="xf9-2q-dQC"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0is-wy-MOD">
+                                <rect key="frame" x="20" y="216" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="hamburger"/>
+                                <connections>
+                                    <action selector="oneClickedWithSender:" destination="1CG-EV-Igi" eventType="touchUpInside" id="7RD-Kq-z0J"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5j-IX-Neu">
+                                <rect key="frame" x="157" y="216" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="hamburger"/>
+                                <connections>
+                                    <action selector="oneClickedWithSender:" destination="1CG-EV-Igi" eventType="touchUpInside" id="daM-OJ-aTr"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zal-MI-F0V">
+                                <rect key="frame" x="294" y="215" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="hamburger"/>
+                                <connections>
+                                    <action selector="oneClickedWithSender:" destination="1CG-EV-Igi" eventType="touchUpInside" id="m6B-Qd-BrC"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8w-kS-8eV">
+                                <rect key="frame" x="20" y="324" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="hamburger"/>
+                                <connections>
+                                    <action selector="oneClickedWithSender:" destination="1CG-EV-Igi" eventType="touchUpInside" id="fFo-w3-ID3"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKM-b8-k9l">
+                                <rect key="frame" x="157" y="324" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="hamburger"/>
+                                <connections>
+                                    <action selector="oneClickedWithSender:" destination="1CG-EV-Igi" eventType="touchUpInside" id="Ylg-uR-olL"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbL-JX-3Qb">
+                                <rect key="frame" x="294" y="323" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="hamburger"/>
+                                <connections>
+                                    <action selector="oneClickedWithSender:" destination="1CG-EV-Igi" eventType="touchUpInside" id="LgZ-de-Y47"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kni-dm-ZPY">
+                                <rect key="frame" x="20" y="433" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="hamburger"/>
+                                <connections>
+                                    <action selector="oneClickedWithSender:" destination="1CG-EV-Igi" eventType="touchUpInside" id="vQa-3m-Tcj"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mv1-ZX-0zi">
+                                <rect key="frame" x="157" y="433" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="hamburger"/>
+                                <connections>
+                                    <action selector="oneClickedWithSender:" destination="1CG-EV-Igi" eventType="touchUpInside" id="xDl-Hj-Ts1"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DK0-jA-esj">
+                                <rect key="frame" x="294" y="432" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="hamburger"/>
+                                <connections>
+                                    <action selector="oneClickedWithSender:" destination="1CG-EV-Igi" eventType="touchUpInside" id="5y0-AZ-hnE"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdd-zd-6f5">
+                                <rect key="frame" x="20" y="542" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="hamburger"/>
+                                <connections>
+                                    <action selector="oneClickedWithSender:" destination="1CG-EV-Igi" eventType="touchUpInside" id="2xa-lg-PE1"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cT-TO-qkO">
+                                <rect key="frame" x="157" y="542" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="hamburger"/>
+                                <connections>
+                                    <action selector="oneClickedWithSender:" destination="1CG-EV-Igi" eventType="touchUpInside" id="CP9-ZJ-q1l"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaf-fS-e7v">
+                                <rect key="frame" x="294" y="541" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="hamburger"/>
+                                <connections>
+                                    <action selector="oneClickedWithSender:" destination="1CG-EV-Igi" eventType="touchUpInside" id="jWx-2v-Hg4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0zs-ix-T9A" firstAttribute="top" secondItem="sPE-UR-xf7" secondAttribute="bottom" constant="26.666666666666671" id="AXx-Rr-UaT"/>
+                            <constraint firstItem="su7-24-SUr" firstAttribute="bottom" secondItem="uio-cM-kaF" secondAttribute="bottom" constant="57" id="SQW-tj-Wxt"/>
+                            <constraint firstItem="0zs-ix-T9A" firstAttribute="leading" secondItem="uio-cM-kaF" secondAttribute="leading" id="bGy-TI-9jD"/>
+                            <constraint firstItem="sPE-UR-xf7" firstAttribute="leading" secondItem="0zs-ix-T9A" secondAttribute="leading" id="blK-Cr-n1P"/>
+                            <constraint firstItem="0zs-ix-T9A" firstAttribute="trailing" secondItem="uio-cM-kaF" secondAttribute="trailing" id="jLY-lS-3GP"/>
+                            <constraint firstItem="sPE-UR-xf7" firstAttribute="trailing" secondItem="0zs-ix-T9A" secondAttribute="trailing" id="ld3-Pv-zD6"/>
+                            <constraint firstItem="sPE-UR-xf7" firstAttribute="leading" secondItem="su7-24-SUr" secondAttribute="leading" constant="84" id="vIr-Bp-Aaj"/>
+                            <constraint firstItem="sPE-UR-xf7" firstAttribute="centerX" secondItem="Kcd-jQ-ahL" secondAttribute="centerX" id="ygr-cw-Hep"/>
+                            <constraint firstItem="sPE-UR-xf7" firstAttribute="top" secondItem="su7-24-SUr" secondAttribute="top" constant="18" id="z2Q-mH-g1T"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="su7-24-SUr"/>
                     </view>
                     <navigationItem key="navigationItem" id="cS6-uf-uCq"/>
                     <connections>
-                        <outlet property="hamburgerEight" destination="kls-IV-44b" id="1hM-OK-KZL"/>
-                        <outlet property="hamburgerEleven" destination="yEQ-nm-qQv" id="BzV-Uq-Xhg"/>
-                        <outlet property="hamburgerFive" destination="DNM-AZ-QA7" id="WuR-SC-SFn"/>
-                        <outlet property="hamburgerFour" destination="1Q4-sK-dkU" id="wwj-Cw-IXz"/>
-                        <outlet property="hamburgerNine" destination="VHM-dV-hPR" id="thq-bz-wzk"/>
-                        <outlet property="hamburgerOne" destination="quf-kZ-LXf" id="D6w-Nm-6NQ"/>
-                        <outlet property="hamburgerSeven" destination="qvQ-xg-yBl" id="F0X-0b-u4f"/>
-                        <outlet property="hamburgerSix" destination="onP-dd-BCQ" id="AH9-9k-9Mw"/>
-                        <outlet property="hamburgerTen" destination="Afb-jZ-57s" id="juw-6j-vud"/>
-                        <outlet property="hamburgerThree" destination="fFc-PF-Cfa" id="YA9-Rg-dEH"/>
-                        <outlet property="hamburgerTwelve" destination="qVp-vx-dLz" id="9sv-h7-cyP"/>
-                        <outlet property="hamburgerTwo" destination="Kzk-Y1-bti" id="wGr-Ao-BdY"/>
+                        <outlet property="hamburgerEight" destination="Mv1-ZX-0zi" id="eWA-oO-Sg6"/>
+                        <outlet property="hamburgerEleven" destination="8cT-TO-qkO" id="Myz-0l-0So"/>
+                        <outlet property="hamburgerFive" destination="wKM-b8-k9l" id="aho-I7-z9C"/>
+                        <outlet property="hamburgerFour" destination="P8w-kS-8eV" id="zdR-Sx-qjb"/>
+                        <outlet property="hamburgerNine" destination="DK0-jA-esj" id="OJP-6t-Qs0"/>
+                        <outlet property="hamburgerOne" destination="0is-wy-MOD" id="8bi-cp-oTD"/>
+                        <outlet property="hamburgerSeven" destination="kni-dm-ZPY" id="juu-bg-gMc"/>
+                        <outlet property="hamburgerSix" destination="TbL-JX-3Qb" id="Poh-0o-yJK"/>
+                        <outlet property="hamburgerTen" destination="Vdd-zd-6f5" id="8bT-3Z-n4B"/>
+                        <outlet property="hamburgerThree" destination="zal-MI-F0V" id="2G7-pZ-h3m"/>
+                        <outlet property="hamburgerTwelve" destination="qaf-fS-e7v" id="6zo-JW-xbq"/>
+                        <outlet property="hamburgerTwo" destination="f5j-IX-Neu" id="Wdp-pR-owT"/>
                         <outlet property="labelHighScore" destination="uio-cM-kaF" id="aPt-1h-toh"/>
                         <outlet property="labelScore" destination="0zs-ix-T9A" id="yLU-sx-fpa"/>
                         <outlet property="labelTimer" destination="sPE-UR-xf7" id="TzL-H1-iAJ"/>
@@ -381,7 +446,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Bt6-H1-2bQ"/>
+        <segue reference="xN2-JC-GnY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="hamburger" width="512" height="448"/>
