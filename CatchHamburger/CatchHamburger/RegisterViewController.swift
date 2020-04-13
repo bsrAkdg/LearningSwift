@@ -35,6 +35,10 @@ class RegisterViewController: UIViewController {
         } else {
             UserDefaults.standard.set(username, forKey: "username")
             UserDefaults.standard.set(0, forKey: "score")
+          
+            if (UserDefaults.standard.object(forKey: "highScore") == nil) {
+                UserDefaults.standard.set(0, forKey: "highScore")
+            }
             
             showAlert(title: "Success", message: "You are saved")
             
@@ -44,6 +48,10 @@ class RegisterViewController: UIViewController {
     
     func showAlert(title: String, message: String) {
         let alert = UIAlertController.init(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) { (UIAlertAction) in
+        
+        }
+        alert.addAction(okButton)
         self.present(alert, animated: true, completion: nil)
     }
 }

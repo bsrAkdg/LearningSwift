@@ -34,7 +34,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start Game"/>
                                 <connections>
-                                    <segue destination="1CG-EV-Igi" kind="show" id="lHF-jr-E8b"/>
+                                    <action selector="startPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b5D-w0-hsn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJR-NS-o3m">
@@ -64,6 +64,8 @@
                     <connections>
                         <outlet property="labelHighScore" destination="S38-gk-mGD" id="WdS-Y5-wdv"/>
                         <outlet property="labelWelcome" destination="Fqf-Kt-boa" id="ciq-rI-2na"/>
+                        <segue destination="pOF-g3-FG3" kind="show" identifier="loginPage" id="OLZ-EH-33E"/>
+                        <segue destination="1CG-EV-Igi" kind="show" identifier="playPage" id="RV4-x3-IzE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -385,8 +387,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3Ba-HA-E5I"/>
-        <segue reference="tcg-yM-aLW"/>
+        <segue reference="OLZ-EH-33E"/>
         <segue reference="xN2-JC-GnY"/>
     </inferredMetricsTieBreakers>
     <resources>

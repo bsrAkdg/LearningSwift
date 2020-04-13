@@ -31,11 +31,17 @@ class LoginViewController: UIViewController {
             showAlert(title: "Warning", message: "Please enter password")
         }
         
-        if UserDefaults.standard.object(forKey: "username") == nil
-            || (UserDefaults.standard.object(forKey: "username") as! String) != username {
-            showAlert(title: "Error", message: "Please enter valid username and password")
+        let savedUser = UserDefaults.standard.object(forKey: "username")
+        
+        let savedUserPassword = UserDefaults.standard.object(forKey: "password")
+        
+        if savedUser == nil
+            || (savedUser as! String) != username {
+            showAlert(title: "Error", message: "Please enter an exist username")
+        } else if (savedUserPassword as! String) != password  {
+            showAlert(title: "Error", message: "Please enter a valid password")
         } else {
-            performSegue(withIdentifier: "homePage", sender: nil)
+             performSegue(withIdentifier: "homePage", sender: nil)
         }
     }
     
@@ -45,6 +51,11 @@ class LoginViewController: UIViewController {
 
     func showAlert(title: String, message: String) {
         let alert = UIAlertController.init(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        let okButton = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) { (UIAlertAction) in
+        
+        }
+        alert.addAction(okButton)
         self.present(alert, animated: true, completion: nil)
     }
 }

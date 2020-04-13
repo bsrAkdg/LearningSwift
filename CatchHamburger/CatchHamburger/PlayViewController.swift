@@ -34,6 +34,7 @@ class PlayViewController: UIViewController {
     var score = 0;
     var selectedHamburger = UIButton()
     var hamburgerClicked  = false
+    var username = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
