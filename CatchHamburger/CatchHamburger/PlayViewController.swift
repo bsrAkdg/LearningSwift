@@ -30,7 +30,7 @@ class PlayViewController: UIViewController {
     var tempHamburgerId = 0
     var timer = Timer()
     var time = 30;
-    var highScore = 10;
+    var highScore = 0;
     var score = 0;
     var selectedHamburger = UIButton()
     var hamburgerClicked  = false
@@ -44,11 +44,10 @@ class PlayViewController: UIViewController {
 
     func initGame() {
         
-        //if UserDefaults.standard.
-        //highScore = UserDefaults.standard.object(forKey: "highScore") as! Int
-               
+        highScore = UserDefaults.standard.object(forKey: "highScore") as! Int
         labelHighScore.text = "High Score : \(highScore)"
-               
+        updateScore()
+
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(refreshTime), userInfo: nil, repeats: true)
     }
     
@@ -132,6 +131,7 @@ class PlayViewController: UIViewController {
             message = "You have passed the highest score, want to play again?"
             UserDefaults.standard.set(score, forKey: "highScore")
         }
+        
         let alert = UIAlertController.init(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         let okAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) { (UIAlertAction) in self.startAgain()
         }

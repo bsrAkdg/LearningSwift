@@ -35,7 +35,6 @@ class HomeViewController: UIViewController {
         if segue.identifier == "playPage" {
             let playPage = PlayViewController()
             playPage.username = username
-            playPage.highScore = UserDefaults.standard.object(forKey: "highScore") as! Int
         } else if segue.identifier == "loginPage" {
             UserDefaults.standard.set(nil, forKey: "username")
             UserDefaults.standard.set(nil, forKey: "score")
