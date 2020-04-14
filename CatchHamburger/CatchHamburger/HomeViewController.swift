@@ -14,13 +14,21 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var labelHighScore: UILabel!
     
     var username = ""
-    var score = 0
+    var highScore = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if UserDefaults.standard.object(forKey: "username") != nil {
+            username = UserDefaults.standard.object(forKey: "username") as! String
+        }
+    
+        if UserDefaults.standard.object(forKey: "highScore") != nil {
+            highScore = UserDefaults.standard.object(forKey: "highScore") as! Int
+        }
+        
         labelWelcome.text = "Welcome \(username)!"
-        labelHighScore.text = "Score : \(score)"
+        labelHighScore.text = "Score : \(highScore)"
     }
  
     @IBAction func startPlay(_ sender: Any) {

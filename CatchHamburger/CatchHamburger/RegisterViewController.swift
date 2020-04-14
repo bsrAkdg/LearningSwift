@@ -34,22 +34,24 @@ class RegisterViewController: UIViewController {
             showAlert(title: "Error", message: "Passwords not matched")
         } else {
             UserDefaults.standard.set(username, forKey: "username")
+            UserDefaults.standard.set(password, forKey: "password")
             UserDefaults.standard.set(0, forKey: "score")
-          
-            if (UserDefaults.standard.object(forKey: "highScore") == nil) {
-                UserDefaults.standard.set(0, forKey: "highScore")
-            }
-            
+            UserDefaults.standard.set(0, forKey: "highScore")
+        
             showAlert(title: "Success", message: "You are saved")
-            
-            performSegue(withIdentifier: "loginPage", sender: nil)
         }
+    }
+    
+    func goLoginPage() {
+        performSegue(withIdentifier: "loginPage", sender: nil)
     }
     
     func showAlert(title: String, message: String) {
         let alert = UIAlertController.init(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         let okButton = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) { (UIAlertAction) in
-        
+            if title == "Success" {
+                self.goLoginPage()
+            }
         }
         alert.addAction(okButton)
         self.present(alert, animated: true, completion: nil)

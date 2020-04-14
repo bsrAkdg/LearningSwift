@@ -45,10 +45,12 @@ class PlayViewController: UIViewController {
     func initGame() {
         
         highScore = UserDefaults.standard.object(forKey: "highScore") as! Int
+        
         labelHighScore.text = "High Score : \(highScore)"
+        
         updateScore()
 
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(refreshTime), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(refreshTime), userInfo: nil, repeats: true)
     }
     
     func updateScore() {
@@ -56,7 +58,7 @@ class PlayViewController: UIViewController {
     }
     
     @objc func refreshTime() {
-        labelTimer.text = "Time : \(time)"
+        labelTimer.text = "\(time)"
         if time == 0 {
             // check score and show popup
             timer.invalidate()
@@ -72,9 +74,16 @@ class PlayViewController: UIViewController {
         selectedHamburger.isHidden = true
         hamburgerClicked = false
         
-        let hamburgerId = Int.random(in: 1 ... 10)
+        var currentHamburgerId = 0
+        var randomHamburgerId = 0
         
-        switch hamburgerId {
+        repeat {
+            randomHamburgerId = Int.random(in: 1 ... 10)
+        } while currentHamburgerId == randomHamburgerId
+        
+        currentHamburgerId = randomHamburgerId
+        
+        switch currentHamburgerId {
         case 1:
             hamburgerOne.isHidden = false
             selectedHamburger = hamburgerOne
@@ -122,20 +131,31 @@ class PlayViewController: UIViewController {
         initGame()
     }
     
+    func finishGame() {
+        performSegue(withIdentifier: "homePage", sender: nil)
+    }
+    
     func showAlert() {
-        var title = "We are sorry :("
-        var message = "You couldn't pass the high score, want to play again?"
+        var title = "Time's up!"
+        var message = "You couldn't pass the high score, Do you want play again?"
     
         if score > highScore {
-            title = "Congratulations :) "
-            message = "You have passed the highest score, want to play again?"
+            title = "Congratulations!"
+            message = "You have passed the highest score, Do you want play again?"
             UserDefaults.standard.set(score, forKey: "highScore")
         }
         
         let alert = UIAlertController.init(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        let okAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) { (UIAlertAction) in self.startAgain()
+        
+        let okAction = UIAlertAction(title: "Play Again", style: UIAlertAction.Style.default) { (UIAlertAction) in self.startAgain()
         }
+        
+        let finishAction = UIAlertAction(title: "Finish", style: UIAlertAction.Style.default) { (UIAlertAction) in self.finishGame()
+        }
+    
+        alert.addAction(finishAction)
         alert.addAction(okAction)
+        
         self.present(alert, animated: true, completion: nil)
     }
     
