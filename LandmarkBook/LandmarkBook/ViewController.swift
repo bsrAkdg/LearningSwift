@@ -22,6 +22,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
        
         getLandmarks()
+        
+        navigationItem.title = "Cities"
     }
     
     func getLandmarks() {
@@ -51,6 +53,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             landmarkNames.remove(at: indexPath.row)
             landmarkImages.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "detailPage", sender: indexPath.row)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailPage" {
+            let index = sender as! Int
+            let landmarkDetail = segue.destination as! LandmarkDetailViewController
+            landmarkDetail.landmarkImage = landmarkImages[index]
+            landmarkDetail.landmarkName = landmarkNames[index]
         }
     }
 }
