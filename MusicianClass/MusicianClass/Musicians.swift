@@ -24,6 +24,10 @@ class Musicians {
         instrument = instrumentInit
         type = typeInit
     }
+    
+    func sing() {
+        print("Nothing else matters")
+    }
 }
 
 enum MusicianType {

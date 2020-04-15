@@ -16,4 +16,17 @@ let james = Musicians(nameInit: "James", ageInit: 50, instrumentInit: "Guitar", 
 
 print(james.name)
 print(james.type)
+james.sing()
 
+let kirk = SuperMusician(nameInit: "Kirk", ageInit: 55, instrumentInit: "Guitar", typeInit: .LeadGuitar)
+print(kirk.name)
+print(kirk.type)
+
+// you cand this
+kirk.sing2()
+//you cant this
+// james.sing2()
+
+// override sing method on SuperMusician
+kirk.sing()
+james.sing()
