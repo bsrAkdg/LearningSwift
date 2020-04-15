@@ -8,7 +8,7 @@
 
 import Foundation
 
-let james = Musicians()
+let james = Musicians(nameInit: "James", ageInit: 50, instrumentInit: "Guitar")
 
 //james.age = 50
 //james.name = "James Hetfield"

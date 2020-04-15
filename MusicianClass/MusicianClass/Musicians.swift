@@ -11,12 +11,15 @@ import Foundation
 class Musicians {
     
     // Property
-    var name : String = ""
-    var age : Int = 0
-    var instrument : String = ""
+    var name : String
+    var age : Int
+    var instrument : String
 
     // Initializer (Constructor)
-    init() {
+    init(nameInit: String, ageInit: Int, instrumentInit: String) {
         print("Musician created")
+        name = nameInit
+        age = ageInit
+        instrument = instrumentInit
     }
 }
