@@ -15,6 +15,7 @@ class DetailsViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var textFieldName: UITextField!
     @IBOutlet weak var textFieldArtist: UITextField!
     @IBOutlet weak var textFieldYear: UITextField!
+    @IBOutlet weak var buttonSave: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

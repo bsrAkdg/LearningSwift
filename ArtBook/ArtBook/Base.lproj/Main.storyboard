@@ -106,6 +106,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="N5m-H8-bxq"/>
                     <connections>
+                        <outlet property="buttonSave" destination="TZr-wB-BmM" id="C9b-qD-b9D"/>
                         <outlet property="imageView" destination="UNz-Q9-QTM" id="dG5-0d-n0e"/>
                         <outlet property="textFieldArtist" destination="XT3-OT-RUM" id="UUh-n8-4eH"/>
                         <outlet property="textFieldName" destination="DdF-yu-NQ8" id="tIL-XW-YZK"/>

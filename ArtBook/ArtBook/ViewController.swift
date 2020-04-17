@@ -7,25 +7,51 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        return cell
-    }
-    
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var paintingNames = [String]()
+    var paintingIds = [UUID]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         setNavigationDetails()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        getPaintingsData()
+    }
+    
+    func getPaintingsData() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        // Needed import CoreData
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Paintings")
+        fetchRequest.returnsObjectsAsFaults = false // dont use cache small entities
+        
+        do {
+            let results = try context.fetch(fetchRequest)
+            
+            for result in results as! [NSManagedObject] {
+                // [NSManagedObject] provides handle as a Core Data
+                if let name = result.value(forKey: "name") as? String {
+                    paintingNames.append(name)
+                    if let id = result.value(forKey: "id") as? UUID{
+                        paintingIds.append(id)
+                    }
+                }
+                self.tableView.reloadData()
+            }
+        } catch {
+            print("Error")
+        }
     }
     
     func setNavigationDetails() {
@@ -34,6 +60,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @objc func addNewPainting() {
         performSegue(withIdentifier: "showDetail", sender: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return paintingNames.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = paintingNames[indexPath.row]
+        return cell
     }
 }
 
