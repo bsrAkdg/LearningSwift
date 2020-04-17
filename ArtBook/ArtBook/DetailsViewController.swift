@@ -24,8 +24,11 @@ class DetailsViewController: UIViewController, UIImagePickerControllerDelegate, 
         super.viewDidLoad()
     
         if chosenPainting != "" {
-            // Core Data
+            // show selected painting detail with core data
             setChosenPaintingDetails()
+            buttonSave.isHidden = true
+        } else {
+            buttonSave.isEnabled = false
         }
         
         addKeyboardRecognizer()
@@ -60,12 +63,21 @@ class DetailsViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
+        buttonSave.isEnabled = true
         imageView.image = info[.editedImage] as? UIImage
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func savePainting(_ sender: Any) {
+        
+        if textFieldName.text == nil
+            || textFieldArtist.text == nil
+            || textFieldYear.text == nil {
+            print("Enter infos")
+            return
+        }
+        
+        
         // get AppDelegate instance for access save and
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
