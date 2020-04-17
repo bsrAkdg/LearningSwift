@@ -54,6 +54,7 @@ class DetailsViewController: UIViewController, UIImagePickerControllerDelegate, 
         imageView.image = info[.editedImage] as? UIImage
         self.dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func savePainting(_ sender: Any) {
         
     }
