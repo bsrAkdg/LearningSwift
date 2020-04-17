@@ -26,9 +26,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         
         getPaintingsData()
+        
+        navigationItem.title = "Art Book"
     }
     
-    func getPaintingsData() {
+    override func viewWillAppear(_ animated: Bool) {
+        // subsucribe "New Data"
+        NotificationCenter.default.addObserver(self, selector: #selector(getPaintingsData), name: NSNotification.Name("NewPainting"), object: nil)
+    }
+    
+    @objc func getPaintingsData() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         

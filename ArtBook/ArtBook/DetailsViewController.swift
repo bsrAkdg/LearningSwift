@@ -85,5 +85,12 @@ class DetailsViewController: UIViewController, UIImagePickerControllerDelegate, 
         } catch {
             print("Error")
         }
+        
+        // Notify previous page to update when new painting added
+        // send data to all project
+        NotificationCenter.default.post(name: NSNotification.Name("NewPainting"), object: nil)
+        
+        // provides turn back
+        self.navigationController?.popViewController(animated: true)
     }
 }
