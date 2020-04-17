@@ -15,7 +15,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var paintingNames = [String]()
     var paintingIds = [UUID]()
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -50,16 +50,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         do {
             let results = try context.fetch(fetchRequest)
             
-            for result in results as! [NSManagedObject] {
-                // [NSManagedObject] provides handle as a Core Data
-                if let name = result.value(forKey: "name") as? String {
-                    paintingNames.append(name)
-                    if let id = result.value(forKey: "id") as? UUID{
-                        paintingIds.append(id)
-                    }
+            if results.count > 0 {
+                for result in results as! [NSManagedObject] {
+                   // [NSManagedObject] provides handle as a Core Data
+                   if let name = result.value(forKey: "name") as? String {
+                       paintingNames.append(name)
+                       if let id = result.value(forKey: "id") as? UUID{
+                           paintingIds.append(id)
+                       }
+                   }
+                   self.tableView.reloadData()
                 }
-                self.tableView.reloadData()
             }
+           
         } catch {
             print("Error")
         }
@@ -81,6 +84,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = UITableViewCell()
         cell.textLabel?.text = paintingNames[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetail", sender: indexPath.row)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" && sender != nil {
+            let index = sender as! Int
+            let detailVC = segue.destination as! DetailsViewController
+            detailVC.chosenPainting = paintingNames[index]
+            detailVC.chosenPaintingId = paintingIds[index]
+        }
     }
 }
 
