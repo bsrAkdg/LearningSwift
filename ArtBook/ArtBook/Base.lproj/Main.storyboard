@@ -67,13 +67,16 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="YiA-zO-HPa"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="savePainting:" destination="5W4-hK-5mH" eventType="touchUpInside" id="YMi-go-avU"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UNz-Q9-QTM">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="square.and.arrow.down.on.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UNz-Q9-QTM">
                                 <rect key="frame" x="65" y="133" width="284" height="327"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="327" id="XQj-Un-hrN"/>
                                     <constraint firstAttribute="width" constant="284" id="xSz-KX-M7O"/>
@@ -132,4 +135,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="square.and.arrow.down.on.square" catalog="system" width="122" height="128"/>
+    </resources>
 </document>
