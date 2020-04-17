@@ -6,6 +6,9 @@
 //  Copyright © 2020 Busra Serdaroglu. All rights reserved.
 //
 
+// for insert core data you must use NSEntityDescription
+// for get, delete core data you must use NSFetchRequest
+
 import UIKit
 import CoreData
 
@@ -96,6 +99,47 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let detailVC = segue.destination as! DetailsViewController
             detailVC.chosenPainting = paintingNames[index]
             detailVC.chosenPaintingId = paintingIds[index]
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            
+            let context = appDelegate.persistentContainer.viewContext
+            
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Paintings")
+            
+            let deletedId = paintingIds[indexPath.row].uuidString
+            
+            fetchRequest.predicate = NSPredicate(format: "id = %@", deletedId)
+            
+            fetchRequest.returnsObjectsAsFaults = false // dont use cache
+            
+            do {
+                let results = try context.fetch(fetchRequest)
+                if results.count > 0 {
+                    for result in results as! [NSManagedObject] {
+                        if let id = result.value(forKey: "id") as? UUID {
+                            if id.uuidString == deletedId {
+                            
+                                context.delete(result)
+                                
+                                paintingNames.remove(at: indexPath.row)
+                                paintingIds.remove(at: indexPath.row)
+                                self.tableView.reloadData()
+                                
+                                try context.save()
+                                break
+                            }
+                        }
+                    }
+                }
+            } catch {
+                print("Error")
+            }
+            
         }
     }
 }

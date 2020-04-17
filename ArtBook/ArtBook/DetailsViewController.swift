@@ -22,12 +22,10 @@ class DetailsViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     
         if chosenPainting != "" {
             // Core Data
             setChosenPaintingDetails()
-            
         }
         
         addKeyboardRecognizer()
