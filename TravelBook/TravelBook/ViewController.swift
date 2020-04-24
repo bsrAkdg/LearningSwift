@@ -81,6 +81,14 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                                         
                                         textFieldName.text = annotationTitle
                                         textFieldComment.text = annotationComment
+                                        
+                                        // stop location manager listener
+                                        locationManager.stopUpdatingLocation()
+                                        
+                                        // focus selected annotation point
+                                        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                                        let region = MKCoordinateRegion(center: coordinate, span: span)
+                                        mapView.setRegion(region, animated: true)
                                     }
                                 }
                             }
@@ -128,18 +136,19 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        //CLLocation : latitude longitude
-        // for draw location on map
-        let location = CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
-        
-        // zoom level : span
-        // the smaller the closer
-        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-        
-        let region = MKCoordinateRegion(center: location, span: span)
-        
-        mapView.setRegion(region, animated: true)
+        if selectedTitle == "" {
+            //CLLocation : latitude longitude
+            // for draw location on map
+            let location = CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
+            
+            // zoom level : span
+            // the smaller the closer
+            let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+            
+            let region = MKCoordinateRegion(center: location, span: span)
+            
+            mapView.setRegion(region, animated: true)
+        }
     }
 
     @IBAction func saveAnnotation(_ sender: Any) {
