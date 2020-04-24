@@ -151,6 +151,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         }
     }
 
+    // pin customize
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
             return nil // dont show user location be pin
@@ -166,7 +167,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             pinView?.tintColor = UIColor.black // change pin color
             
             // add button to pin
-            let button = UIButton(type: UIButton.ButtonType.detailDisclosure)
+            let button = UIButton(type: UIButton.ButtonType.detailDisclosure) // info button on pin
             pinView?.rightCalloutAccessoryView = button
             
         } else {
@@ -174,6 +175,31 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         }
         
         return pinView
+    }
+    
+    // pin custom button click
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if selectedTitle != "" {
+            let requestLocation = CLLocation(latitude: annotationLatitude, longitude: annotationLongitude)
+            CLGeocoder ().reverseGeocodeLocation(requestLocation) { (placemarks, error) in
+                // closure : callback function
+                if let placemark = placemarks {
+                    if placemark.count > 0 {
+                        let newPlacemark = MKPlacemark(placemark: placemark[0])
+                        let item = MKMapItem(placemark: newPlacemark)
+                        item.name = self.annotationTitle
+                        
+                        //open navigation with use placemark
+                        let launchOptions = [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving] // car, walking, vs
+                        
+                        item.openInMaps(launchOptions: launchOptions)
+                        
+                        
+                    }
+                }
+                
+            }
+        }
     }
     
     @IBAction func saveAnnotation(_ sender: Any) {
