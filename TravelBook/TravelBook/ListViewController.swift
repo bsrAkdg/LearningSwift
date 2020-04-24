@@ -15,7 +15,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var titleArray = [String]()
     var idArray = [UUID]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,7 +27,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         getData()
     }
-    
     
     func getData() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -62,8 +61,24 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         performSegue(withIdentifier: "goMap", sender: nil)
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goMap", sender: indexPath.row)
+
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         titleArray.count
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goMap" {
+            if sender != nil {
+                let viewController = segue.destination as! ViewController
+                let index = sender as! Int
+                viewController.selectedTitle = titleArray[index]
+                viewController.selectedTitleId = idArray[index]
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -71,4 +86,5 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.textLabel?.text = titleArray[indexPath.row]
         return cell
     }
+
 }
