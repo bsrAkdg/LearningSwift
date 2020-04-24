@@ -13,6 +13,8 @@ import CoreLocation
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var textFieldComment: UITextField!
+    @IBOutlet weak var textFieldName: UITextField!
     
     var locationManager = CLLocationManager()
     
@@ -50,8 +52,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             // create annotation for showing
             let annotation = MKPointAnnotation()
             annotation.coordinate = touchedCoordinate
-            annotation.title = "New annotation"
-            annotation.subtitle = "Travel Book"
+            annotation.title = textFieldName.text
+            annotation.subtitle = textFieldComment.text
             
             self.mapView.addAnnotation(annotation)
         }
