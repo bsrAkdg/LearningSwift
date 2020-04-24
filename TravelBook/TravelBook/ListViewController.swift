@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableViewLocations: UITableView!
+    
+    var titleArray = [String]()
+    var idArray = [UUID]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +24,38 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableViewLocations.delegate = self
         tableViewLocations.dataSource = self
+        
+        getData()
+    }
+    
+    
+    func getData() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Places")
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let results = try context.fetch(request)
+            if results.count > 0 {
+                
+                self.titleArray.removeAll(keepingCapacity: false)
+                self.idArray.removeAll(keepingCapacity: false)
+
+                for result in results as! [NSManagedObject] {
+                    if let title = result.value(forKey: "title") as? String {
+                        self.titleArray.append(title)
+                    }
+                    if let id = result.value(forKey: "id") as? UUID {
+                        self.idArray.append(id)
+                    }
+                    tableViewLocations.reloadData()
+                }
+            }
+        } catch {
+            
+        }
     }
     
     @objc func addButtonClicked() {
@@ -27,12 +63,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        titleArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = "Test"
+        cell.textLabel?.text = titleArray[indexPath.row]
         return cell
     }
 }
