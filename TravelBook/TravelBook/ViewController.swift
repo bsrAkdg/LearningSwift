@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import CoreData
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
 
@@ -17,6 +18,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @IBOutlet weak var textFieldName: UITextField!
     
     var locationManager = CLLocationManager()
+   
+    var choosenLatitude = Double()
+    var choosenLongitude = Double()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +53,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             // touched points cast to coordinates
             let touchedCoordinate = self.mapView.convert(touchedPoint, toCoordinateFrom: self.mapView)
             
+            // get choosen coordinates for core data
+            choosenLatitude = touchedCoordinate.latitude
+            choosenLongitude = touchedCoordinate.longitude
+            
             // create annotation for showing
             let annotation = MKPointAnnotation()
             annotation.coordinate = touchedCoordinate
@@ -74,5 +82,26 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         mapView.setRegion(region, animated: true)
     }
 
+    @IBAction func saveAnnotation(_ sender: Any) {
+        
+        // save annotation core data
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+   
+        let newPlace = NSEntityDescription.insertNewObject(forEntityName: "Places", into: context)
+        
+        newPlace.setValue(textFieldName.text, forKey: "title")
+        newPlace.setValue(textFieldComment.text, forKey: "subtitle")
+        newPlace.setValue(choosenLatitude, forKey: "latitude")
+        newPlace.setValue(choosenLongitude, forKey: "longitude")
+        newPlace.setValue(UUID(), forKey: "id")
+        
+        do {
+            try context.save()
+            print("success")
+        } catch {
+            print("error")
+        }
+    }
 }
 
