@@ -14,7 +14,7 @@
 		E8683A6D2449A66200ED7E23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8683A6C2449A66200ED7E23 /* Assets.xcassets */; };
 		E8683A702449A66200ED7E23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8683A6E2449A66200ED7E23 /* LaunchScreen.storyboard */; };
 		E8683A782449A8A100ED7E23 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8683A772449A8A100ED7E23 /* DetailViewController.swift */; };
-		E8683A7A2449AE0300ED7E23 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8683A792449AE0300ED7E23 /* File.swift */; };
+		E8683A7A2449AE0300ED7E23 /* Simpson.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8683A792449AE0300ED7E23 /* Simpson.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		E8683A6F2449A66200ED7E23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8683A712449A66200ED7E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8683A772449A8A100ED7E23 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		E8683A792449AE0300ED7E23 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		E8683A792449AE0300ED7E23 /* Simpson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simpson.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,7 @@
 				E8683A6E2449A66200ED7E23 /* LaunchScreen.storyboard */,
 				E8683A712449A66200ED7E23 /* Info.plist */,
 				E8683A772449A8A100ED7E23 /* DetailViewController.swift */,
-				E8683A792449AE0300ED7E23 /* File.swift */,
+				E8683A792449AE0300ED7E23 /* Simpson.swift */,
 			);
 			path = SimpsonBook;
 			sourceTree = "<group>";
@@ -144,7 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8683A7A2449AE0300ED7E23 /* File.swift in Sources */,
+				E8683A7A2449AE0300ED7E23 /* Simpson.swift in Sources */,
 				E8683A682449A66000ED7E23 /* ViewController.swift in Sources */,
 				E8683A642449A66000ED7E23 /* AppDelegate.swift in Sources */,
 				E8683A662449A66000ED7E23 /* SceneDelegate.swift in Sources */,
