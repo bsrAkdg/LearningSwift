@@ -101,3 +101,28 @@ print(newTuple.name)
 print(newTuple.famale)
 
 print("*****")
+
+// GUARD LET vs IF LET
+
+// Guard -> more negative
+// If -> more pozitif
+
+let myString = "5"
+
+func convertToIntegerIf(input: String) -> Int{
+    if let myInteger = Int(input) {
+        return myInteger
+    }
+    return 0
+}
+
+func convertToIntegerGuard(input: String) -> Int{
+    // confident
+    guard let myInteger = Int(input) else {
+        return 0
+    }
+    return myInteger
+}
+
+print(convertToIntegerIf(input: myString))
+print(convertToIntegerGuard(input: myString))
