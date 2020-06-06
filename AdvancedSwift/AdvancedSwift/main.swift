@@ -126,3 +126,33 @@ func convertToIntegerGuard(input: String) -> Int{
 
 print(convertToIntegerIf(input: myString))
 print(convertToIntegerGuard(input: myString))
+
+print("*****")
+
+// SWITCH
+
+let myNumber = 11
+
+// remainder
+let myRemainder = myNumber % 2
+print(myRemainder)
+
+if(myRemainder == 1) {
+    print("it's 1")
+} else if(myRemainder == 2) {
+    print("it's 2")
+} else if(myRemainder == 3) {
+    print("it's 3")
+} else {
+    print("none of the above")
+}
+
+// instead of ifs, use switch-case
+switch myRemainder {
+case 1...3:
+    print("it's 1-3")
+case 4:
+    print("it's 3")
+default:
+    print("none of the above")
+}
