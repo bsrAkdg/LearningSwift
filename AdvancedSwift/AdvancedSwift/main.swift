@@ -65,3 +65,39 @@ print(musicianClassInstance.age)
 print(musicianNewStructInstance.age)
 musicianNewStructInstance.happyBirthday()
 print(musicianNewStructInstance.age)
+
+print("*****")
+
+// TUPLE
+
+let myTuple = (1,3)
+print(myTuple.0)
+print(myTuple.1)
+
+
+let myTuple2 = ("A","B","C")
+print(myTuple2)
+print(myTuple2.1)
+print(myTuple2.2)
+// myTuple2.2 = 10 is let you cant this
+
+var myTuple3 = ("A","B","C")
+print(myTuple3.2)
+// myTuple3.2 = 10 you cant this, 2. element is String
+myTuple3.2  = "D"
+print(myTuple3.2)
+
+
+var myTuple4 = (10,[1,2,3])
+print(myTuple4.1[2]) // 3
+
+let predefinedTuple : (String, String)
+predefinedTuple.0 = "Busra"
+predefinedTuple.1 = "Okan"
+print(predefinedTuple.0)
+
+let newTuple = (name:"James", famale : false)
+print(newTuple.name)
+print(newTuple.famale)
+
+print("*****")
