@@ -14,4 +14,12 @@ struct MusicianStruct {
     var name: String
     var age: Int
     var instrument: String
+    
+    /*func happyBirthday() { you cant this, use mutating keyword on func
+        self.age += 1
+    }*/
+    
+    mutating func happyBirthday() {
+        self.age += 1
+    }
 }

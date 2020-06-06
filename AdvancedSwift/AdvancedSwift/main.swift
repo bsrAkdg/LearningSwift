@@ -29,11 +29,19 @@ var musicianNewStructInstance = MusicianStruct(name: "Okan", age: 32, instrument
 musicianNewStructInstance.age = 33 // age change!
 print(musicianNewStructInstance.age)
 
+print("*****")
+
 
 // REFERENCE vs VALUE
 
 let copyOfClassMusicianClass = musicianClassInstance // reference type
 var copyOfStructMusicianStruct = musicianNewStructInstance // value type
+
+// Reference types -> Class
+// Copy -> Same object new reference -> 1 object 2 reference
+
+// Value types -> Struct
+// Copy -> New object create -> 2 object
 
 print(copyOfClassMusicianClass.age)
 print(copyOfStructMusicianStruct.age)
@@ -47,10 +55,13 @@ print(copyOfStructMusicianStruct.age)
 print(musicianClassInstance.age)
 print(musicianNewStructInstance.age)
 
-// Reference types -> Class
-// Copy -> Same object new reference -> 1 object 2 reference
+print("*****")
 
-// Value types -> Struct
-// Copy -> New object create -> 2 object
+// MUTATING FUNCTION
+print(musicianClassInstance.age)
+musicianClassInstance.happyBirthday()
+print(musicianClassInstance.age)
 
-
+print(musicianNewStructInstance.age)
+musicianNewStructInstance.happyBirthday()
+print(musicianNewStructInstance.age)
