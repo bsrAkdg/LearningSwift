@@ -13,7 +13,20 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, User!")
+        
+        VStack { // like container, we can put a lot of views on the vstack(vertical), hstack(horizontal), zstack
+            Text("Hello, User!")
+                      .bold()
+                      .italic()
+                      .font(.largeTitle)
+                      .foregroundColor(Color.blue)
+                      .padding()
+            Text("Welcome!")
+                      .bold()
+                      .italic()
+                      .font(.title)
+                      .foregroundColor(Color.red)
+        }
     }
 }
 
