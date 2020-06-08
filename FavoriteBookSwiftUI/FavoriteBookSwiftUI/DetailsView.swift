@@ -9,13 +9,27 @@
 import SwiftUI
 
 struct DetailsView: View {
+    
+    var choosenFavoriteElement : FavoriteElements
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Image(choosenFavoriteElement.imagename)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            
+            Text(choosenFavoriteElement.name)
+                .font(.largeTitle)
+                .padding()
+            
+            Text(choosenFavoriteElement.description)
+                .padding()
+        }
     }
 }
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView()
+        // for preview sample
+        DetailsView(choosenFavoriteElement: theDarkNight)
     }
 }

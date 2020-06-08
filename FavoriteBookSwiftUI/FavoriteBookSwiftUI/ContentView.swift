@@ -17,7 +17,7 @@ struct ContentView: View {
                       Section(header: Text(favorite.title)) {
                           ForEach(favorite.elements) { element in
                               // Navigation click event
-                              NavigationLink(destination: DetailsView()) {
+                              NavigationLink(destination: DetailsView(choosenFavoriteElement: element)) {
                                   Text(element.name)
                               }
                           }
