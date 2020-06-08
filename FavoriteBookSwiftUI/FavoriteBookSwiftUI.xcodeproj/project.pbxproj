@@ -14,6 +14,7 @@
 		E896169E248EC6FA0079836E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E896169D248EC6FA0079836E /* Preview Assets.xcassets */; };
 		E89616A1248EC6FA0079836E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E896169F248EC6FA0079836E /* LaunchScreen.storyboard */; };
 		E89616A9248EC75E0079836E /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89616A8248EC75E0079836E /* FavoriteModel.swift */; };
+		E89616AB248ED0210079836E /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89616AA248ED0210079836E /* DetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E89616A0248EC6FA0079836E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E89616A2248EC6FA0079836E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E89616A8248EC75E0079836E /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
+		E89616AA248ED0210079836E /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				E89616A2248EC6FA0079836E /* Info.plist */,
 				E896169C248EC6FA0079836E /* Preview Content */,
 				E89616A8248EC75E0079836E /* FavoriteModel.swift */,
+				E89616AA248ED0210079836E /* DetailsView.swift */,
 			);
 			path = FavoriteBookSwiftUI;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8961695248EC6F80079836E /* AppDelegate.swift in Sources */,
+				E89616AB248ED0210079836E /* DetailsView.swift in Sources */,
 				E8961697248EC6F80079836E /* SceneDelegate.swift in Sources */,
 				E8961699248EC6F80079836E /* ContentView.swift in Sources */,
 				E89616A9248EC75E0079836E /* FavoriteModel.swift in Sources */,
