@@ -10,7 +10,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        
+        List{
+            ForEach(myFavorites) { favorite in
+                Section(header: Text(favorite.title)) {
+                    ForEach(favorite.elements) { element in
+                        Text(element.name)
+                    }
+                }
+            }
+        }
     }
 }
 
